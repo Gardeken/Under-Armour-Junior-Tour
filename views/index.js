@@ -12,12 +12,18 @@ function showMessage(message) {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const infoObj = {};
+  let vacio = false;
   const inputs = document.querySelectorAll("input");
   inputs.forEach((input) => {
     if (input.value !== "") {
       infoObj[input.id] = input.value;
+    } else if (input.value === "") {
+      vacio = true;
     }
   });
+  if (vacio === true) {
+    return showMessage("Ha dejado algún campo vacío");
+  }
   const date = infoObj.inputDate;
   const listDate = date.split("-");
   const year = listDate[0];
@@ -27,11 +33,11 @@ form.addEventListener("submit", async (e) => {
     showMessage("Edad inválida");
   }
   if (edad < 5 || edad > 15) {
-    showMessage("Edad inválida");
+    return showMessage("Edad inválida");
   }
   const inputFranela = infoObj.inputFranela;
   if (inputFranela.length > 3 || inputFranela.length < 1) {
-    showMessage("Tamaño inválido");
+    return showMessage("Tamaño inválido");
   }
 
   try {
