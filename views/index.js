@@ -32,14 +32,10 @@ form.addEventListener("submit", async (e) => {
   if (edad !== validateAge && edad !== validateAge - 1) {
     showMessage("Edad inválida");
   }
-  if (edad < 5 || edad > 15) {
-    return showMessage("Edad inválida");
-  }
   const inputFranela = infoObj.inputFranela;
   if (inputFranela.length > 3 || inputFranela.length < 1) {
     return showMessage("Tamaño inválido");
   }
-
   try {
     const get = await axios.post("/api/email/sendEmail", infoObj);
     showMessage(get.data.message);
