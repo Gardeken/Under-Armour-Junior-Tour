@@ -37,6 +37,7 @@ form.addEventListener("submit", async (e) => {
   try {
     const get = await axios.post("/api/email/sendEmail", infoObj);
     showMessage(get.data.message);
+    form.reset();
   } catch (error) {
     showMessage("Hubo un error al procesar su solicitud");
   }
