@@ -42,6 +42,11 @@ body {
   font-style: normal;
 }
 
+.Título span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .Subtítulo {
   font-size: 1.8rem;
 }
@@ -118,6 +123,14 @@ label,
   margin-right: 1rem;
 }
 
+.logo-junko {
+  position: absolute;
+  place-self: start;
+  width: 5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
 .btn-submit {
   cursor: pointer;
   border: none;
@@ -173,6 +186,28 @@ label,
   .form {
     width: 70vw;
     margin-bottom: 2rem;
+  }
+
+  .Título {
+    width: 8rem;
+    font-size: 1.6rem;
+    margin-top: 2.2rem;
+  }
+
+  .Título span {
+    place-self: start;
+    font-size: 0.7rem;
+  }
+
+  .logo {
+    width: 5rem;
+    margin-right: 0;
+  }
+
+  .logo-junko {
+    margin-top: 1.2rem;
+    width: 4.5rem;
+    margin-left: 0.5rem;
   }
 
   .form .container-input {
