@@ -16,6 +16,7 @@ sendEmailRouter.post("/sendEmail", async (req, res) => {
     inputName,
     inputLast,
     inputAge,
+    inputNumber,
     inputDate,
     inputNameR,
     inputSocio,
@@ -34,6 +35,7 @@ sendEmailRouter.post("/sendEmail", async (req, res) => {
       Edad: ${inputAge}
       Fecha de nacimiento: ${inputDate}
       Nombre del representante: ${inputNameR}
+      Teléfono de contacto: ${inputNumber}
       Socio del club: ${inputSocio}
       Talla franela: ${inputFranela}
       Talla pantalon: ${inputPantalon}

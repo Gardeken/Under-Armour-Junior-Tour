@@ -72,6 +72,7 @@ body {
 
 .container-name {
   width: 100%;
+  margin-bottom: 1rem;
   display: flex;
 }
 
@@ -100,8 +101,9 @@ label,
   width: 3rem;
 }
 
-#inputDate {
-  width: 7rem;
+#inputDate,
+#inputNumber {
+  width: 9vw;
 }
 
 .input-ropa {
@@ -201,7 +203,8 @@ label,
     width: 30%;
   }
 
-  #inputDate {
+  #inputDate,
+  #inputNumber {
     width: 40%;
   }
 }
