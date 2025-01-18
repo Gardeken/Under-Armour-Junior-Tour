@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planilla de inscripción</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="images/logo.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <main class="container-main">
+      <div id="message" class="message"></div>
+      <div class="container-bg">
+        <picture class="bg">
+          <source
+            class="bg-tablet"
+            srcset="images/tablet.webp"
+            media="(min-width: 768px)"
+          />
+          <source
+            class="bg-telefono"
+            srcset="images/telefono.webp"
+            media="(min-width: 377px)"
+          />
+          <img class="bg-respaldo" src="images/resepaldo.webp" alt="" />
+        </picture>
+      </div>
+      <form class="form" id="form">
+        <h1 class="Título">Planilla de inscripción</h1>
+        <div class="container-name">
+          <div class="container-input">
+            <label for="inputName">Nombres</label>
+            <input id="inputName" type="text" />
+          </div>
+          <div class="container-input">
+            <label for="inputLast">Apellido</label>
+            <input id="inputLast" type="text" />
+          </div>
+        </div>
+        <div class="container-input">
+          <label for="inputAge">Edad</label>
+          <input id="inputAge" type="number" />
+        </div>
+        <div class="container-input">
+          <label for="inputDate">Fecha de nacimiento</label>
+          <input type="date" id="inputDate" />
+        </div>
+        <div class="container-input">
+          <label for="inputNameR">Nombre del representante</label>
+          <input id="inputNameR" type="text" />
+        </div>
+        <div class="container-input">
+          <label for="inputSocio">Club al que es socio</label>
+          <input id="inputSocio" type="text" />
+        </div>
+        <h2 class="Subtítulo">Tallas</h2>
+        <div class="container-input">
+          <label for="inputFranela">Talla de franela</label>
+          <input
+            class="input-ropa"
+            id="inputFranela"
+            placeholder="ejemplo M"
+            type="text"
+          />
+        </div>
+        <div class="container-input">
+          <label for="inputPantalon">Talla de pantalón</label>
+          <input
+            class="input-ropa"
+            id="inputPantalon"
+            placeholder="ejemplo 30 x 33"
+            type="text"
+          />
+        </div>
+        <div class="container-input">
+          <label for="inputZapato">Talla de zapato (USA)</label>
+          <input
+            class="input-ropa"
+            id="inputZapato"
+            placeholder="ejemplo 8.5"
+            type="text"
+          />
+        </div>
+        <img class="logo" src="images/logo.webp" alt="" />
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
