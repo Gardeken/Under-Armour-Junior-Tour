@@ -14,7 +14,6 @@ body {
 }
 
 .bg-respaldo {
-  filter: blur(5px);
   width: 101vw;
   height: 101vh;
 }
@@ -22,7 +21,6 @@ body {
 .form {
   box-shadow: 10px 10px 39px 0px rgba(0, 0, 0, 0.75);
   width: 60vw;
-  height: 90vh;
   padding: 2rem;
   padding-top: 0;
   display: grid;
@@ -152,4 +150,58 @@ label,
 .message-animation {
   transition: 0.3s;
   top: 1rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .bg-respaldo {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+  }
+
+  .container-name {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 70vw;
+    margin-bottom: 2rem;
+  }
+
+  .form .container-input {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-items: center;
+    flex-direction: column;
+  }
+  .form .container-input label {
+    place-self: center;
+  }
+
+  .container-name .container-input input {
+    width: 80%;
+  }
+
+  #inputNameR,
+  #inputSocio {
+    width: 80%;
+  }
+
+  .input-ropa {
+    width: 50%;
+  }
+
+  #inputAge {
+    width: 30%;
+  }
+
+  #inputDate {
+    width: 40%;
+  }
 }
