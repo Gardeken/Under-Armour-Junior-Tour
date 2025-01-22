@@ -1,0 +1,52 @@
+:root {
+  --blue: #062e76;
+  --red: #a8222f;
+  --light-gray: #454545;
+  --gray: #303030;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+main {
+  display: grid;
+  height: 100vh;
+}
+
+.ham-icon {
+  display: none;
+  margin: 1rem;
+  cursor: pointer;
+  width: 2rem;
+}
+
+.container-main {
+  display: flex;
+  gap: 1rem;
+}
+
+.container-table {
+  place-self: start center;
+  width: 80vw;
+  margin: 1rem;
+  margin-top: 8rem;
+  max-height: 80vh;
+  color: white;
+  background-color: var(--red);
+  max-height: 80vw;
+  font-weight: 300;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+}
+
+.lateral-bar {
+  background-color: var(--blue);
+  color: white;
+  border-radius: 24px;
+  width: 20vw;
+  height: 100vh;
+}
