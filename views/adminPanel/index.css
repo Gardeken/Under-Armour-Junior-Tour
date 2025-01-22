@@ -33,14 +33,37 @@ main {
   place-self: start center;
   width: 80vw;
   margin: 1rem;
-  margin-top: 8rem;
-  max-height: 80vh;
+  height: 80vh;
   color: white;
   background-color: var(--red);
-  max-height: 80vw;
-  font-weight: 300;
+  max-height: 80vh;
+  font-weight: 500;
   border-radius: 0.5rem;
   box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
+}
+
+.container-items,
+.insc {
+  margin: 1rem;
+}
+
+.container-items {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  place-items: center;
+  margin-right: 2rem;
+}
+
+.container-insc {
+  height: 92.5%;
+  overflow-y: auto;
+  scrollbar-gutter: static;
+}
+
+.insc {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  place-items: center;
 }
 
 .lateral-bar {
