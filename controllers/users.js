@@ -28,15 +28,15 @@ userRouter.post("/createUser", async (req, res) => {
   newUser.pantalon = inputPantalon;
   newUser.zapato = inputZapato;
 
-  if (inputAge > 6 && inputAge <= 8) {
+  if (inputAge >= 6 && inputAge <= 8) {
     newUser.categoria = "6-8 Age";
-  } else if (inputAge > 8 && inputAge <= 10) {
+  } else if (inputAge >= 8 && inputAge <= 10) {
     newUser.categoria = "9-10 Age";
-  } else if (inputAge > 10 && inputAge <= 12) {
+  } else if (inputAge >= 10 && inputAge <= 12) {
     newUser.categoria = "11-12 Age";
-  } else if (inputAge > 12 && inputAge <= 14) {
+  } else if (inputAge >= 12 && inputAge <= 14) {
     newUser.categoria = "13-14 Age";
-  } else if (inputAge > 14 && inputAge <= 18) {
+  } else if (inputAge >= 14 && inputAge <= 18) {
     newUser.categoria = "15-18 Age";
   }
 
