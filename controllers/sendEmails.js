@@ -17,6 +17,7 @@ sendEmailRouter.post("/sendEmail", async (req, res) => {
     inputLast,
     inputAge,
     inputNumber,
+    inputEmail,
     inputDate,
     inputNameR,
     inputSocio,
@@ -41,6 +42,15 @@ sendEmailRouter.post("/sendEmail", async (req, res) => {
       Talla pantalon: ${inputPantalon}
       Talla zapato: ${inputZapato}
       
+      `,
+    });
+    await transporter.sendMail({
+      from: "Under Armour Junior Tour <dominicode.xyz@gmail.com>",
+      to: `${inputEmail}`,
+      subject: "Planilla de inscripción",
+      text: `
+      Felicitaciones ${inputName} ${inputLast},
+      Te has inscrito exitosamente.
       `,
     });
     res.json({ message: "Tu inscripción ha sido enviada con éxito" });

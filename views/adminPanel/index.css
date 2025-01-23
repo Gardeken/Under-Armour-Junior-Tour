@@ -35,7 +35,7 @@ main {
   margin: 1rem;
   height: 80vh;
   color: white;
-  background-color: var(--red);
+  background-color: var(--blue);
   max-height: 80vh;
   font-weight: 500;
   border-radius: 0.5rem;
@@ -67,9 +67,40 @@ main {
 }
 
 .lateral-bar {
-  background-color: var(--blue);
+  background-color: var(--red);
   color: white;
   border-radius: 24px;
   width: 20vw;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.select-cat {
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #800000;
+  cursor: pointer;
+  color: white;
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.x-icon {
+  display: none;
+  width: 2rem;
+  place-self: end;
+}
+
+.Título {
+  font-size: 1.8rem;
 }

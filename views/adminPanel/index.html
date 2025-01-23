@@ -29,9 +29,32 @@
     </svg>
     <main class="container-main">
       <div class="lateral-bar">
-        <h2>Filtros</h2>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="x-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+
+        <h2 class="Título">Filtros</h2>
         <div class="filters">
           <span>Categoría</span>
+          <select class="select-cat" id="selectCat">
+            <option selected disabled value="">...</option>
+            <option value="6-8 Age">6-8 Age</option>
+            <option value="9-10 Age">9-10 Age</option>
+            <option value="11-12 Age">11-12 Age</option>
+            <option value="13-14 Age">13-14 Age</option>
+            <option value="15-18 Age">15-18 Age</option>
+          </select>
         </div>
       </div>
       <div class="container-table">

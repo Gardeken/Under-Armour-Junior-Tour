@@ -3,7 +3,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const path = require("path");
-const sendEmailRouter = require("./controllers/sendEmail");
+const sendEmailRouter = require("./controllers/sendEmails");
+const userRouter = require("./controllers/users");
+const adminRouter = require("./controllers/admins");
 const token = process.env.DB_TOKEN;
 
 async function ConnectBD() {
@@ -23,5 +25,7 @@ app.use("/Admin", express.static(path.resolve("views", "adminPanel")));
 
 app.use("/controllers", express.static(path.resolve("controllers")));
 app.use("/api/email", sendEmailRouter);
+app.use("/api/user", userRouter);
+app.use("/api/admin", adminRouter);
 
 module.exports = app;

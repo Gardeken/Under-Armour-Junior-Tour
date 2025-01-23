@@ -11,6 +11,10 @@ function showMessage(message) {
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  validateInputs();
+});
+
+async function validateInputs() {
   const infoObj = {};
   let vacio = false;
   const inputs = document.querySelectorAll("input");
@@ -30,17 +34,18 @@ form.addEventListener("submit", async (e) => {
   const validateAge = Number(new Date().getFullYear()) - Number(year);
   const edad = Number(infoObj.inputAge);
   if (edad !== validateAge && edad !== validateAge - 1) {
-    showMessage("Edad inválida");
+    return showMessage("Edad inválida");
   }
   const inputFranela = infoObj.inputFranela;
   if (inputFranela.length > 3 || inputFranela.length < 1) {
     return showMessage("Tamaño inválido");
   }
   try {
+    const post = await axios.post("/api/user/createUser", infoObj);
     const get = await axios.post("/api/email/sendEmail", infoObj);
     showMessage(get.data.message);
     form.reset();
   } catch (error) {
     showMessage("Hubo un error al procesar su solicitud");
   }
-});
+}

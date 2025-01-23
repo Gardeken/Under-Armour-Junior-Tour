@@ -21,6 +21,9 @@ body {
 .form {
   box-shadow: 10px 10px 39px 0px rgba(0, 0, 0, 0.75);
   width: 60vw;
+  height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem;
   padding-top: 0;
   padding-bottom: 1rem;
@@ -29,8 +32,21 @@ body {
   position: absolute;
   margin-top: 0.5rem;
   place-self: start center;
-  z-index: 5;
   background-color: white;
+}
+
+.form::-webkit-scrollbar {
+  background-color: white;
+  width: 8px;
+}
+
+.form::-webkit-scrollbar-thumb {
+  border-radius: 24px;
+  background-color: var(--red);
+}
+
+.form::-webkit-scrollbar-thumb:hover {
+  background-color: #8f1e29;
 }
 
 .Título {
@@ -119,16 +135,16 @@ label,
 
 .logo {
   position: absolute;
-  place-self: start end;
-  width: 6rem;
-  margin-top: 1rem;
-  margin-right: 1rem;
-}
-
-.logo-junko {
-  position: absolute;
   place-self: start;
   width: 5rem;
+  margin-top: 0.6rem;
+  margin-left: 1rem;
+}
+
+.logo2 {
+  position: absolute;
+  place-self: start;
+  width: 8rem;
   margin-top: 0.5rem;
   margin-left: 1rem;
 }
