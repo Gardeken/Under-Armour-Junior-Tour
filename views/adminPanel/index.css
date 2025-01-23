@@ -138,8 +138,8 @@ main {
 @media (max-width: 900px) {
   .lateral-bar {
     position: absolute;
-    height: 100vh;
-    top: 0;
+    height: 97vh;
+    top: -4rem;
     width: 50vw;
     left: -60vw;
     transition: 0.3s;
@@ -147,7 +147,7 @@ main {
 
   .lateral-animation {
     left: 0;
-    top: 0;
+    top: -4rem;
   }
 
   .ham-icon {
