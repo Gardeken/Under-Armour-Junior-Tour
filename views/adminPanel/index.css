@@ -137,9 +137,9 @@ main {
 /*Responsive*/
 @media (max-width: 900px) {
   .lateral-bar {
-    position: absolute;
+    position: fixed;
+    place-self: start;
     height: 97vh;
-    top: -4rem;
     width: 50vw;
     left: -60vw;
     transition: 0.3s;
@@ -147,11 +147,11 @@ main {
 
   .lateral-animation {
     left: 0;
-    top: -4rem;
   }
 
   .ham-icon {
     display: block;
+    position: absolute;
   }
 
   .x-icon {
@@ -161,6 +161,7 @@ main {
   .container-table {
     overflow-x: auto;
     width: 90vw;
+    margin-top: 4rem;
   }
 
   .container-items {
