@@ -6,7 +6,6 @@ adminRouter.get("/getAdmin", async (req, res) => {
   const consulta = await admin.findOne({
     username: username,
   });
-  console.log(consulta);
   if (consulta) {
     if (consulta.password === password) {
       res.status(200).json({ route: "/admin" });
