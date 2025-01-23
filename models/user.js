@@ -15,6 +15,8 @@ const userSchema = new mongoose.Schema({
   franela: String,
   pantalon: String,
   zapato: String,
+  payM: String,
+  payN: String,
 });
 
 const user = mongoose.model("user", userSchema);

@@ -77,7 +77,7 @@ function showUsers(listUsers) {
   const containerIns = document.querySelector("#containerIns");
   containerIns.innerHTML = "";
   listUsers.forEach((user) => {
-    const { age, categoria, club, name } = user;
+    const { age, categoria, club, name, payM, payN } = user;
     const div = document.createElement("div");
     div.classList.add("insc");
     div.innerHTML = `
@@ -85,6 +85,10 @@ function showUsers(listUsers) {
             <span>${categoria}</span>
             <span>${age}</span>
             <span>${club}</span>
+            <div class="pay">
+            <span>${payM}</span>
+            <span>${payN}</span>
+            </div>
     `;
     containerIns.appendChild(div);
   });

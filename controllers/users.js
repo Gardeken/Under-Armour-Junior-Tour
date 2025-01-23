@@ -10,6 +10,8 @@ userRouter.post("/createUser", async (req, res) => {
     inputDate,
     inputNameR,
     inputEmail,
+    inputPay,
+    inputPayN,
     inputSocio,
     inputFranela,
     inputPantalon,
@@ -27,6 +29,8 @@ userRouter.post("/createUser", async (req, res) => {
   newUser.franela = inputFranela;
   newUser.pantalon = inputPantalon;
   newUser.zapato = inputZapato;
+  newUser.payM = inputPay;
+  newUser.payN = inputPayN;
 
   if (inputAge >= 6 && inputAge <= 8) {
     newUser.categoria = "6-8 Age";
