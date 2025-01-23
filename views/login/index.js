@@ -24,7 +24,6 @@ async function validateInputs() {
     });
     localStorage.setItem("user", JSON.stringify(infoObj));
     window.location.href = get.data.route;
-    showMessage("Ha iniciado sesión con éxito");
   } catch (error) {
     showMessage(error.response.data.message);
   }
