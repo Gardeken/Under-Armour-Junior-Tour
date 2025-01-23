@@ -1,0 +1,111 @@
+:root {
+  --blue: #062e76;
+  --red: #a8222f;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: grid;
+  overflow: hidden;
+}
+
+.bg-respaldo {
+  width: 101vw;
+  height: 101vh;
+}
+
+.message {
+  position: fixed;
+  top: -5rem;
+  place-self: center;
+  background-color: var(--red);
+  width: 10rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  z-index: 10;
+  transition: 0.3s;
+  color: white;
+}
+
+.message-animation {
+  transition: 0.3s;
+  top: 1rem;
+}
+
+.container-main {
+  display: grid;
+  height: 100vh;
+}
+
+.formulario {
+  box-shadow: 10px 10px 64px 0px rgba(0, 0, 0, 0.75);
+  place-self: center;
+  position: absolute;
+  background-color: white;
+  width: 50vw;
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.formulario h2 {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.container-input {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+
+.formulario label {
+  font-size: 1.2rem;
+}
+
+.formulario input {
+  outline: none;
+  border: none;
+  border-bottom: var(--blue) 2px solid;
+  padding: 0.5rem;
+  transition: 0.3s;
+}
+
+.formulario input:hover {
+  transform: translateY(5px);
+  transition: 0.3s;
+}
+
+.formulario button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  border-radius: 0.3rem;
+  padding: 0.7rem 1.1rem;
+  width: 5rem;
+  margin-top: 1rem;
+  align-self: center;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .bg-respaldo {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+  }
+
+  .formulario {
+    width: 70%;
+    place-self: start center;
+    margin-top: 2rem;
+  }
+}

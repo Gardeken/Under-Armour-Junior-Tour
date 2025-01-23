@@ -2,7 +2,7 @@ const hamIcon = document.querySelector(".ham-icon");
 const xIcon = document.querySelector(".x-icon");
 
 document.addEventListener("DOMContentLoaded", () => {
-  getUsers();
+  validateAdmin();
 });
 
 // Backend
@@ -15,6 +15,26 @@ async function getUsers() {
   } catch (error) {
     console.log(error);
     showMessage("Hubo un error al cargar los usuarios");
+  }
+}
+
+async function validateAdmin() {
+  if (localStorage.getItem("user")) {
+    let user = localStorage.getItem("user");
+    user = JSON.parse(user);
+    try {
+      const get = await axios.get("/api/admin/getAdmin", {
+        params: {
+          username: user.inputUsername,
+          password: user.inputPass,
+        },
+      });
+      getUsers();
+    } catch (error) {
+      window.location.href = "/login";
+    }
+  } else {
+    window.location.href = "/login";
   }
 }
 

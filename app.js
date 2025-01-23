@@ -21,6 +21,7 @@ ConnectBD();
 
 app.use(express.json());
 app.use("/", express.static(path.resolve("views", "Planilla")));
+app.use("/Login", express.static(path.resolve("views", "login")));
 app.use("/Admin", express.static(path.resolve("views", "adminPanel")));
 
 app.use("/controllers", express.static(path.resolve("controllers")));

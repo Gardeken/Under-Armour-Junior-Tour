@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="message" class="message"></div>
+    <main class="container-main">
+      <div class="container-bg">
+        <picture class="bg">
+          <source
+            class="bg-tablet"
+            srcset="images/tablet.webp"
+            media="(min-width: 768px)"
+          />
+          <source
+            class="bg-telefono"
+            srcset="images/telefono.webp"
+            media="(min-width: 377px)"
+          />
+          <img class="bg-respaldo" src="images/resepaldo.webp" alt="" />
+        </picture>
+      </div>
+      <form id="form" class="formulario">
+        <h2>Inicia sesión</h2>
+        <div class="container-input">
+          <label for="inputUsername">Usuario</label>
+          <input id="inputUsername" type="text" />
+        </div>
+        <div class="container-input">
+          <label for="inputPass">Contraseña</label>
+          <input id="inputPass" type="password" />
+        </div>
+        <button>Aceptar</button>
+      </form>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

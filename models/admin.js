@@ -3,7 +3,7 @@ const adminRouter = require("../controllers/admins.js");
 
 const adminSchema = new mongoose.Schema({
   id: String,
-  name: String,
+  username: String,
   password: String,
 });
 
