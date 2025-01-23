@@ -50,4 +50,15 @@ userRouter.post("/createUser", async (req, res) => {
   }
 });
 
+userRouter.get("/getUsers", async (req, res) => {
+  try {
+    const users = await user.find();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(400).json({
+      message: "Hubo un error",
+    });
+  }
+});
+
 module.exports = userRouter;

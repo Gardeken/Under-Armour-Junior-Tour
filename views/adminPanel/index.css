@@ -12,7 +12,34 @@ body {
   font-style: normal;
 }
 
+.container-message {
+  position: absolute;
+  width: 100%;
+  display: grid;
+}
+
+.message {
+  position: fixed;
+  top: -5rem;
+  place-self: center;
+  background-color: var(--red);
+  width: 10rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  z-index: 10;
+  transition: 0.3s;
+  color: white;
+}
+
+.message-animation {
+  transition: 0.3s;
+  top: 1rem;
+}
+
 main {
+  position: relative;
   display: grid;
   height: 100vh;
 }
@@ -34,24 +61,26 @@ main {
   width: 80vw;
   margin: 1rem;
   height: 80vh;
-  color: white;
-  background-color: var(--blue);
+  color: black;
+  background-color: white;
   max-height: 80vh;
   font-weight: 500;
   border-radius: 0.5rem;
   box-shadow: 10px 10px 47px 0px rgba(0, 0, 0, 0.75);
 }
 
-.container-items,
 .insc {
   margin: 1rem;
 }
 
 .container-items {
   display: grid;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--blue);
   grid-template-columns: 2fr 1fr 1fr 2fr;
   place-items: center;
-  margin-right: 2rem;
 }
 
 .container-insc {
@@ -103,4 +132,43 @@ main {
 
 .Título {
   font-size: 1.8rem;
+}
+
+/*Responsive*/
+@media (max-width: 900px) {
+  .lateral-bar {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    width: 50vw;
+    left: -60vw;
+    transition: 0.3s;
+  }
+
+  .lateral-animation {
+    left: 0;
+    top: 0;
+  }
+
+  .ham-icon {
+    display: block;
+  }
+
+  .x-icon {
+    display: block;
+  }
+
+  .container-table {
+    overflow-x: auto;
+    width: 90vw;
+  }
+
+  .container-items {
+    width: 193vw;
+  }
+
+  .container-insc {
+    width: 200vw;
+    height: 90%;
+  }
 }

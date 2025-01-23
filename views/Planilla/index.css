@@ -190,7 +190,7 @@ label,
   text-align: center;
   flex-direction: column;
 }
-
+/*Responsive*/
 @media (max-width: 900px) {
   body {
     overflow-x: hidden;
