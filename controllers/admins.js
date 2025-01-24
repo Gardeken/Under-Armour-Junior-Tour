@@ -1,6 +1,6 @@
 const admin = require("../models/admin");
 const adminRouter = require("express").Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 adminRouter.get("/getAdmin", async (req, res) => {
   const { username, password } = req.query;
