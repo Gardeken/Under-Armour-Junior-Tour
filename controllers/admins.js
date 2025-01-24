@@ -1,5 +1,6 @@
 const admin = require("../models/admin");
 const adminRouter = require("express").Router();
+const bcrypt = require("bcrypt");
 
 adminRouter.get("/getAdmin", async (req, res) => {
   const { username, password } = req.query;
@@ -7,7 +8,8 @@ adminRouter.get("/getAdmin", async (req, res) => {
     username: username,
   });
   if (consulta) {
-    if (consulta.password === password) {
+    const comparacion = await bcrypt.compare(password, consulta.password);
+    if (comparacion) {
       res.status(200).json({ route: "/admin" });
     } else {
       res.status(401).json({ message: "Contraseña inválida" });

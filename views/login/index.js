@@ -22,7 +22,13 @@ async function validateInputs() {
         password: infoObj.inputPass,
       },
     });
-    localStorage.setItem("user", JSON.stringify(infoObj));
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        inputUsername: infoObj.inputUsername,
+        inputPass: infoObj.inputPass,
+      })
+    );
     window.location.href = get.data.route;
   } catch (error) {
     showMessage(error.response.data.message);
