@@ -17,6 +17,11 @@ const userSchema = new mongoose.Schema({
   zapato: String,
   payM: String,
   payN: String,
+  active: {
+    type: Boolean,
+    default: false,
+  },
+  amount: Number,
 });
 
 const user = mongoose.model("user", userSchema);

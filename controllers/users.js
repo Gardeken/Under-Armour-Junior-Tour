@@ -13,6 +13,7 @@ userRouter.post("/createUser", async (req, res) => {
     inputPay,
     inputPayN,
     inputSocio,
+    inputCant,
     inputFranela,
     inputPantalon,
     inputZapato,
@@ -31,7 +32,8 @@ userRouter.post("/createUser", async (req, res) => {
   newUser.zapato = inputZapato;
   newUser.payM = inputPay;
   newUser.payN = inputPayN;
-
+  newUser.amount = inputCant;
+  newUser.id = Date.now();
   if (inputAge >= 6 && inputAge <= 8) {
     newUser.categoria = "6-8 Age";
   } else if (inputAge > 8 && inputAge <= 10) {
@@ -61,6 +63,39 @@ userRouter.get("/getUsers", async (req, res) => {
   } catch (error) {
     res.status(400).json({
       message: "Hubo un error",
+    });
+  }
+});
+
+userRouter.put("/activateUser", async (req, res) => {
+  const { idUser } = req.body;
+  try {
+    await user.findOneAndUpdate(
+      { id: idUser },
+      {
+        active: true,
+      }
+    );
+    res.status(200).json({
+      message: "El usuario ha sido activado con éxito",
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Hubo un error al activar el usuario",
+    });
+  }
+});
+
+userRouter.delete("/deleteUser", async (req, res) => {
+  const { idUser } = req.query;
+  try {
+    await user.findOneAndDelete({ id: idUser });
+    res.status(200).json({
+      message: "El usuario ha sido eliminado con éxito",
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Hubo un error al eliminar el usuario",
     });
   }
 });

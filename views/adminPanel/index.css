@@ -77,7 +77,6 @@ main {
   padding: 1rem;
   border-radius: 0.5rem 0.5rem 0 0;
   background-color: var(--blue);
-  grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
   place-items: center;
 }
 
@@ -89,14 +88,42 @@ main {
 
 .insc {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr 2fr;
   place-items: center;
+}
+
+.insc,
+.container-items {
+  grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 2fr;
 }
 
 .pay {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.club {
+  text-align: center;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.btns button {
+  cursor: pointer;
+  background-color: var(--red);
+  border: none;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.deleteBtn {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .lateral-bar {
@@ -115,13 +142,33 @@ main {
   gap: 1rem;
 }
 
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0.3rem 0.5rem;
+  color: white;
+  border-bottom: 2px solid var(--blue);
+  transition: 0.3s;
+}
+
+.filter input:hover {
+  transition: 0.3s;
+  transform: translateY(5px);
+}
+
 .select-cat {
   outline: none;
   border: none;
   border-radius: 0.3rem;
   padding: 0.3rem 0.5rem;
   background-color: #800000;
-  cursor: pointer;
   color: white;
   font-family: "Outfit", serif;
   font-optical-sizing: auto;

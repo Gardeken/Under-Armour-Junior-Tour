@@ -47,15 +47,21 @@
 
         <h2 class="Título">Filtros</h2>
         <div class="filters">
-          <span>Categoría</span>
-          <select class="select-cat" id="selectCat">
-            <option value="">...</option>
-            <option value="6-8 Age">6-8 Age</option>
-            <option value="9-10 Age">9-10 Age</option>
-            <option value="11-12 Age">11-12 Age</option>
-            <option value="13-14 Age">13-14 Age</option>
-            <option value="15-18 Age">15-18 Age</option>
-          </select>
+          <div class="filter">
+            <span>Categoría</span>
+            <select class="select-cat" id="selectCat">
+              <option value="">...</option>
+              <option value="6-8 Age">6-8 Age</option>
+              <option value="9-10 Age">9-10 Age</option>
+              <option value="11-12 Age">11-12 Age</option>
+              <option value="13-14 Age">13-14 Age</option>
+              <option value="15-18 Age">15-18 Age</option>
+            </select>
+          </div>
+          <div class="filter">
+            <span>Número de recibo</span>
+            <input id="inputNum" type="text" />
+          </div>
         </div>
       </div>
       <div id="containerMessage" class="container-message">
@@ -68,6 +74,7 @@
           <span>Edad</span>
           <span>Club</span>
           <span>Pago</span>
+          <span>Cantidad</span>
         </div>
         <div id="containerIns" class="container-insc"></div>
       </div>

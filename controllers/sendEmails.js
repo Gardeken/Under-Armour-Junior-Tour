@@ -23,6 +23,7 @@ sendEmailRouter.post("/sendEmail", async (req, res) => {
     inputPayN,
     inputNameR,
     inputSocio,
+    inputCant,
     inputFranela,
     inputPantalon,
     inputZapato,
@@ -42,6 +43,7 @@ sendEmailRouter.post("/sendEmail", async (req, res) => {
       Socio del club: ${inputSocio}
       Método de pago: ${inputPay}
       Número de pago: ${inputPayN}
+      Monto pagado: ${inputCant}
       Talla franela: ${inputFranela}
       Talla pantalon: ${inputPantalon}
       Talla zapato: ${inputZapato}

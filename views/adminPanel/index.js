@@ -38,10 +38,35 @@ async function validateAdmin() {
   }
 }
 
+async function activateUser(idUser) {
+  try {
+    const put = await axios.put("/api/user/activateUser", { idUser });
+    showMessage(put.data.message);
+    getUsers();
+  } catch (error) {
+    showMessage("Hubo un error al activar el usuario");
+  }
+}
+
+async function deleteUser(idUser) {
+  try {
+    const eliminar = await axios.delete("/api/user/deleteUser", {
+      params: {
+        idUser,
+      },
+    });
+    showMessage(eliminar.data.message);
+    getUsers();
+  } catch (error) {
+    showMessage("Hubo un error al activar el usuario");
+  }
+}
+
 //Frontend
 
 function filterUsers(listUsers) {
   const selectCat = document.querySelector("#selectCat");
+  const inputNum = document.querySelector("#inputNum");
   let newList;
   selectCat.addEventListener("change", () => {
     switch (selectCat.value) {
@@ -71,25 +96,63 @@ function filterUsers(listUsers) {
         break;
     }
   });
+
+  inputNum.addEventListener("input", () => {
+    if (!inputNum.value) {
+      newList = listUsers;
+      return showUsers(newList);
+    }
+    newList = listUsers.filter((user) => user.payN === inputNum.value);
+    showUsers(newList);
+  });
 }
 
 function showUsers(listUsers) {
   const containerIns = document.querySelector("#containerIns");
   containerIns.innerHTML = "";
   listUsers.forEach((user) => {
-    const { age, categoria, club, name, payM, payN } = user;
+    const { age, categoria, club, name, payM, payN, amount, id, active } = user;
     const div = document.createElement("div");
     div.classList.add("insc");
     div.innerHTML = `
     <span>${name}</span>
             <span>${categoria}</span>
             <span>${age}</span>
-            <span>${club}</span>
+            <span class="club">${club}</span>
             <div class="pay">
             <span>${payM}</span>
             <span>${payN}</span>
             </div>
+            <span>$${amount}</span>
     `;
+
+    const activarBtn = document.createElement("button");
+    activarBtn.innerHTML = "Activar";
+    activarBtn.setAttribute("userId", id);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute("userId", id);
+    deleteBtn.innerHTML = "Eliminar";
+    deleteBtn.classList.add("deleteBtn");
+
+    const containerBtns = document.createElement("div");
+    containerBtns.classList.add("btns");
+    if (!active) {
+      containerBtns.appendChild(activarBtn);
+    }
+    containerBtns.appendChild(deleteBtn);
+
+    div.appendChild(containerBtns);
+
+    activarBtn.addEventListener("click", (e) => {
+      const idUser = e.target.getAttribute("userId");
+      activateUser(idUser);
+    });
+    deleteBtn.addEventListener("click", (e) => {
+      const idUser = e.target.getAttribute("userId");
+      deleteUser(idUser);
+    });
+
     containerIns.appendChild(div);
   });
 }
