@@ -16,7 +16,6 @@ form.addEventListener("submit", async (e) => {
 
 async function validateInputs() {
   const submitBtn = document.querySelector("#submitBtn");
-  submitBtn.disabled = true;
   const infoObj = {};
   let vacio = false;
   const inputs = document.querySelectorAll("input");
@@ -46,7 +45,6 @@ async function validateInputs() {
     const post = await axios.post("/api/user/createUser", infoObj);
     const get = await axios.post("/api/email/sendEmail", infoObj);
     showMessage(get.data.message);
-    submitBtn.disabled = false;
     form.reset();
   } catch (error) {
     showMessage("Hubo un error al procesar su solicitud");
