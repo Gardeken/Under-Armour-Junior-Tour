@@ -358,4 +358,9 @@ label,
   .loader {
     top: 40%;
   }
+
+  .modal {
+    top: 30%;
+    width: 86vw;
+  }
 }

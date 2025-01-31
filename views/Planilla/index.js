@@ -53,6 +53,8 @@ async function validateInputs() {
   const infoObj = {};
   let vacio = false;
   const inputs = document.querySelectorAll("input");
+  const inputPay = document.querySelector("#inputPay");
+  console.log(inputPay.value);
   inputs.forEach((input) => {
     if (input.value !== "") {
       infoObj[input.id] = input.value;
@@ -64,6 +66,7 @@ async function validateInputs() {
     showSpinner(false);
     return showMessage("Ha dejado algún campo vacío");
   }
+  infoObj.inputPay = inputPay.value;
   const date = infoObj.inputDate;
   const listDate = date.split("-");
   const year = listDate[0];
