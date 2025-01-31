@@ -116,14 +116,20 @@ function showUsers(listUsers) {
     div.classList.add("insc");
     div.innerHTML = `
     <span>${name}</span>
-            <span>${categoria}</span>
+            <span>${
+              categoria === undefined && age < 6
+                ? "Under 6"
+                : categoria === undefined && age > 18
+                ? "Over 18"
+                : `${categoria}`
+            }</span>
             <span>${age}</span>
             <span class="club">${club}</span>
             <div class="pay">
             <span>${payM}</span>
             <span>${payN}</span>
             </div>
-            <span>$${amount}</span>
+            <span>${payM === "Zelle" ? `$ ${amount}` : `${amount} Bs`}</span>
     `;
 
     const activarBtn = document.createElement("button");

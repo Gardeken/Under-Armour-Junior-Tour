@@ -13,9 +13,70 @@ body {
   position: relative;
 }
 
+.modal {
+  background-color: white;
+  position: fixed;
+  place-self: center;
+  width: 40vw;
+  height: 40vh;
+  z-index: 30;
+  border-radius: 0.3rem;
+  flex-direction: column;
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.modal .x-icon {
+  margin: 1rem;
+  cursor: pointer;
+  width: 2rem;
+  align-self: end;
+}
+
+.modal p {
+  align-self: center;
+  font-size: 1.3rem;
+}
+
 .bg-respaldo {
   width: 101vw;
   height: 101vh;
+}
+
+.bg-black {
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  place-self: center;
+  background-color: rgba(0, 0, 0, 0.404);
+  position: fixed;
+  top: 0;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid white;
+  z-index: 30;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  position: fixed;
+  place-self: center;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .form {
@@ -75,11 +136,22 @@ body {
   grid-template-columns: 2fr 2fr;
 }
 
+.form .container-pay {
+  display: flex;
+  gap: 1rem;
+}
+
 .form .container-input label {
   place-self: start;
 }
 
-.form .container-input input {
+.form .container-input select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.form .container-input input,
+.form .container-input select {
   outline: none;
   border: none;
   border-bottom: var(--blue) 2px solid;
@@ -87,7 +159,8 @@ body {
   transition: 0.3s;
 }
 
-.form .container-input input:hover {
+.form .container-input input:hover,
+.form .container-input select:hover {
   transform: translateY(5px);
   transition: 0.3s;
 }
@@ -112,7 +185,8 @@ body {
 label,
 .btn-submit,
 .message,
-.precios {
+.precios,
+.modal {
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -127,6 +201,10 @@ label,
 #inputDate,
 #inputNumber {
   width: 9vw;
+}
+
+#inputPay {
+  width: 23vw;
 }
 
 .input-ropa {
@@ -149,7 +227,8 @@ label,
   margin-left: 1rem;
 }
 
-.btn-submit {
+.btn-submit,
+.btn-data {
   cursor: pointer;
   border: none;
   background-color: var(--red);
@@ -235,6 +314,10 @@ label,
     margin-left: 0.5rem;
   }
 
+  .container-pay {
+    flex-direction: column;
+  }
+
   .form .container-input {
     display: flex;
     gap: 1rem;
@@ -248,6 +331,10 @@ label,
 
   .container-name .container-input input {
     width: 80%;
+  }
+
+  #inputPay {
+    width: 50vw;
   }
 
   #inputNameR,
@@ -266,5 +353,9 @@ label,
   #inputDate,
   #inputNumber {
     width: 40%;
+  }
+
+  .loader {
+    top: 40%;
   }
 }

@@ -22,6 +22,28 @@
   </head>
   <body>
     <main class="container-main">
+      <span id="spinner"></span>
+      <div id="bgBlack"></div>
+      <div id="modal" class="modal">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="x-icon"
+          id="xIcon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+
+        <p>Zelle:</p>
+        <p>Pago móvil:</p>
+      </div>
       <div id="message" class="message"></div>
       <div class="container-bg">
         <picture class="bg">
@@ -78,11 +100,14 @@
         </div>
         <div class="container-input">
           <label for="inputPay">Método de pago</label>
-          <input
-            id="inputPay"
-            placeholder="Solo pago móvil o zelle"
-            type="text"
-          />
+          <div class="container-pay">
+            <select id="inputPay">
+              <option selected disabled value="">...</option>
+              <option value="Pago móvil">Pago móvil</option>
+              <option value="Zelle">Zelle</option>
+            </select>
+            <button id="btnData" class="btn-data">Datos</button>
+          </div>
         </div>
         <div class="container-input">
           <label for="inputPayN">Número de recibo</label>
