@@ -36,9 +36,14 @@ body {
   align-self: end;
 }
 
+.modal span,
 .modal p {
   align-self: center;
-  font-size: 1.3rem;
+}
+
+.modal p {
+  font-weight: 800;
+  font-size: 1.4rem;
 }
 
 .bg-respaldo {
