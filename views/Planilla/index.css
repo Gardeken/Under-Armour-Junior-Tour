@@ -366,6 +366,7 @@ label,
 
   .modal {
     top: 30%;
+    height: 50vh;
     width: 86vw;
   }
 }
